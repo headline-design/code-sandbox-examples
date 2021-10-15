@@ -15,13 +15,13 @@ const ExampleModal = ({ children }) => {
       {!show && <Button onClick={() => toggleShow(true)}>AlgoPay</Button>}
       <Modal show={show} onClose={() => toggleShow(false)}>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">AlgoPay</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Whoo hoo! Reading text in a modal.
+        Are you sure you want to connect to MyAlgo?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
