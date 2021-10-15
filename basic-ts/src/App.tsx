@@ -4,7 +4,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 
 import ButtonsShowcase from './showcases/Buttons';
-import ToastsShowcase from './showcases/Toasts';
+import ModalsShowcase from './showcases/Modals';
 
 const App: React.FC = () => {
   return (
@@ -16,8 +16,8 @@ const App: React.FC = () => {
       </Jumbotron>
       <h2>Buttons</h2>
       <ButtonsShowcase />
-      <h2>Toasts</h2>
-      <ToastsShowcase />
+      <h2>Modals</h2>
+      <ModalsShowcase />
     </Container>
   );
 };

@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Toast from 'react-bootstrap/Toast';
+import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
 import './App.css';
 
-const ExampleToast = ({ children }) => {
-  const [show, toggleShow] = useState(true);
+const ExampleModal = ({ children }) => {
+  const [show, toggleShow] = useState(false);
 
   return (
     <>
-      {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
-      <Toast show={show} onClose={() => toggleShow(false)}>
-        <Toast.Header>
-          <strong className="mr-auto">React-Bootstrap</strong>
-        </Toast.Header>
-        <Toast.Body>{children}</Toast.Body>
-      </Toast>
+      {!show && <Button onClick={() => toggleShow(true)}>AlgoPay</Button>}
+      <Modal show={show} onClose={() => toggleShow(false)}>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Whoo hoo! Reading text in a modal.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Continue</button>
+      </div>
+</Modal>
     </>
   );
 };
@@ -27,12 +36,12 @@ const App = () => (
   <Container className="p-3">
     <Jumbotron>
       <h1 className="header">Welcome To React-Bootstrap</h1>
-      <ExampleToast>
-        We now have Toasts
+      <ExampleModal>
+        We now have Modals
         <span role="img" aria-label="tada">
           🎉
         </span>
-      </ExampleToast>
+      </ExampleModal>
     </Jumbotron>
   </Container>
 );

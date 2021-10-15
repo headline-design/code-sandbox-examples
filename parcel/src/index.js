@@ -5,22 +5,22 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Toast from 'react-bootstrap/Toast';
+import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
-const ExampleToast = ({ children }) => {
+const ExampleModal = ({ children }) => {
   const [show, toggleShow] = useState(true);
 
   return (
     <React.Fragment>
-      {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
-      <Toast show={show} onClose={() => toggleShow(false)}>
-        <Toast.Header>
+      {!show && <Button onClick={() => toggleShow(true)}>Show Modal</Button>}
+      <Modal show={show} onClose={() => toggleShow(false)}>
+        <Modal.Header>
           <strong className="mr-auto">React-Bootstrap</strong>
-        </Toast.Header>
-        <Toast.Body>{children}</Toast.Body>
-      </Toast>
+        </Modal.Header>
+        <Modal.Body>{children}</Modal.Body>
+      </Modal>
     </React.Fragment>
   );
 };
@@ -29,12 +29,12 @@ const App = () => (
   <Container className="p-3">
     <Jumbotron>
       <h1 className="header">Welcome To React-Bootstrap</h1>
-      <ExampleToast>
-        We now have Toasts
+      <ExampleModal>
+        We now have Modals
         <span role="img" aria-label="tada">
           🎉
         </span>
-      </ExampleToast>
+      </ExampleModal>
     </Jumbotron>
   </Container>
 );
